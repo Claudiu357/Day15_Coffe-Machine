@@ -29,6 +29,18 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+# def is_resources(choice_coffe):
+#     coffe_ingredients = MENU[choice_coffe]['ingredients']
+#     if coffe_ingredients['water'] > resources["water"] :
+
+def return_money():
+    print("Please insert coins")
+    quarters = int(input("How many quarters?"))
+    dimes = int(input("How many dimes?"))
+    nickles = int(input("How many nickles?"))
+    pennies = int(input("How many pennies?"))
+    dollars = round(float(quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01), 2)
+    return dollars
 
 machine_is_running = True
 
@@ -39,6 +51,7 @@ while machine_is_running:
     elif choice == "espresso":
         print("Please insert coins")
     elif choice == "latte":
-        print("Please insert coins")
+        money = return_money()
+        print(f"You have entered {money}$")
     elif choice == "capuccino":
         print("please insert  coins")
